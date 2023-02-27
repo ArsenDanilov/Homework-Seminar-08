@@ -31,8 +31,8 @@ def menu_data(contact_list):
         change_data(contact_list)
     if button == 5:
         delete_data(contact_list)
-    if button < 1 or button > 6:
-        print('Указанное действие недоступно для выполнения')
+    # if button < 1 or button > 6:
+    #     print('Указанное действие недоступно для выполнения')
 
 
 def add_user(contact_list):
@@ -69,7 +69,6 @@ def change_data(new_contact_list):
 def delete_data(contact_list):
     with open('Task.txt', 'w', encoding='utf-8') as file:
         print(f'Вывод контактного списка: \n')
-        menu_data(contact_list)
         contact_list.pop(int(input('\nВведите номер контакта в списке, который вы бы хотели удалить: ')))
         file.writelines(contact_list)
         print('Контакт успешно удалён!')
